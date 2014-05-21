@@ -17,6 +17,7 @@ int main() {
 	genetyczny(func_ocen,80,10,"y=exp(-(8*x)^2/2)+(0.1*x)^2");
 	genetyczny(func_ocen2,80,10,"y=-100 * (x^2 - x) ^2 - (1 - x)^2");
 	genetyczny(func_ocen_onemax,80,10,"OneMax");
+	system ("PAUSE");
 	return 0;
 }
 
@@ -33,7 +34,7 @@ void genetyczny(float (*funk)(Chromosom *), int prawd_krzyz, int prawd_mut, stri
 	int ilosc_iteracji;
 	cout<<"Rozmiar populacji : ";
 	cin>>rozmiar_populacji;
-	cout<<"Ilość iteracji : ";
+	cout<<"Ilosc iteracji : ";
 	cin>>ilosc_iteracji;
 	Populacja * populacja = new Populacja(rozmiar_populacji);
 	int wynik_posredni=-RAND_MAX;
@@ -52,12 +53,12 @@ void genetyczny(float (*funk)(Chromosom *), int prawd_krzyz, int prawd_mut, stri
 		}
 	}
 	cout<<"obliczone maksimum: "<<(int)funk(populacja->get_wynik())<<endl;
-	cout<<"Wynik osiągnięto po "<<numer_iteracji_wyniku<<" iteracjach\n";
+	cout<<"Wynik osiągnieto po "<<numer_iteracji_wyniku<<" iteracjach\n";
 }
 
 
 /*
- *	Wzór chromosomu (21 bitów): 
+ *	Wzór chromosomu (21 bitów):
  *	0 0000 00000000 00000000
  * 	czlon 0 - znak +/-
  * 	człon 1 - pozycja przecinka
